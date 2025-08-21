@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kuttys Dress Shop - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form onsubmit="return checkLogin()">
+      <input type="text" id="username" placeholder="Enter Username" required>
+      <input type="password" id="password" placeholder="Enter Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <!-- error msg place -->
+    <p id="error" style="color:red; font-weight:bold;"></p>
+  </div>
+
+  <script>
+    function checkLogin() {
+      let user = document.getElementById("username").value;
+      let pass = document.getElementById("password").value;
+      
+      // Simple fixed login (username: kutty, password: 1234)
+      if(user === "kutty" && pass === "1234") {
+        window.location.href = "https://www.meesho.com/";
+        return false;
+      } else {
+        document.getElementById("error").innerText = "Invalid username or password!";
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
